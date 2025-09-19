@@ -1042,6 +1042,37 @@ const Map: React.FC<MapProps> = ({ layersVisibility }) => {
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
       <div ref={containerRef} style={{ width: '100%', height: '100%' }} />
 
+
+            {/* Logo institucional - AGREGAR AQUÍ */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: '50%',
+        transform: 'translateX(-50%)',
+        zIndex: 25,
+        background: 'rgba(255, 255, 255, 0.5)',
+        borderRadius: 12,
+        padding: '2px 2px',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+        width: 200,
+        height: 60,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+        <img 
+          src={`${process.env.PUBLIC_URL}/logo_SEGOB.png`} 
+          alt="SEGOB"
+          style={{
+            maxWidth: '100%',
+            maxHeight: '100%',
+            objectFit: 'contain'
+          }}
+        />
+      </div>
+
+
+
       <div className="custom-popup-container">
         {routesData.map(route => {
           if (!mapRef.current) return null;
